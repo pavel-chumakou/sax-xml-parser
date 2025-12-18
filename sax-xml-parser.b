@@ -13,7 +13,7 @@
 //    -t <file>
 //        Extract text from a XML(HTML) file
 //
-// Written by Pavel Chumakou (pavel@chumakou.com)
+// Written by Pavel Chumakou github.com/pavel-chumakou
 
 
 parse(str, len, characters, start_tag, end_tag, start_document, end_document) 
@@ -97,10 +97,15 @@ parse(str, len, characters, start_tag, end_tag, start_document, end_document)
                 if (singleTag) 
                 {
                     (&*start_tag)(str, tag_start, i + 1, tag_name_start, tag_name_end, 1);
-                } else {
-                    if (openTag) {
+                } 
+                else 
+                {
+                    if (openTag) 
+                    {
                         (&*start_tag)(str, tag_start, i + 1, tag_name_start, tag_name_end, 0);
-                    } else {
+                    } 
+                    else 
+                    {
                         (&*end_tag)(str, tag_start, i + 1, tag_name_start, tag_name_end);
                     }
                 }
@@ -287,6 +292,5 @@ main(argc, argv)
     
     print_usage();
     return(0);    
-
 }
 
